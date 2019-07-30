@@ -1,1 +1,1 @@
-"react-magic-text"
+'react-magic-text';
