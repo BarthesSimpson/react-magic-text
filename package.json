@@ -1,0 +1,25 @@
+{
+  "name": "react-magic-text",
+  "version": "0.0.1",
+  "description": "Magic Text component for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarthesSimpson/react-magic-text.git"
+  },
+  "keywords": [
+    "react",
+    "text",
+    "input",
+    "textarea"
+  ],
+  "author": "BarthesSimpson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BarthesSimpson/react-magic-text/issues"
+  },
+  "homepage": "https://github.com/BarthesSimpson/react-magic-text#readme"
+}
