@@ -2,9 +2,22 @@
   "name": "react-magic-text",
   "version": "0.0.1",
   "description": "Magic Text component for React",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "jest"
+    "build": "export NODE_ENV=production && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "test": "jest --config jestconfig.json",
+    "test:watch": "jest --config jestconfig.json --watch",
+    "version": "npm run test && npm run format && git add -A src"
   },
   "repository": {
     "type": "git",
@@ -21,5 +34,14 @@
   "bugs": {
     "url": "https://github.com/BarthesSimpson/react-magic-text/issues"
   },
-  "homepage": "https://github.com/BarthesSimpson/react-magic-text#readme"
+  "homepage": "https://github.com/BarthesSimpson/react-magic-text#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  }
 }
