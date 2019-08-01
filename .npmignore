@@ -1,0 +1,6 @@
+# blacklist all
+**
+# include whitelist
+!lib/**
+# exclude tests
+__tests__

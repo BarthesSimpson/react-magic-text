@@ -4,9 +4,6 @@
   "description": "Magic Text component for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
   "scripts": {
     "build": "export NODE_ENV=production && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
