@@ -1,8 +1,7 @@
-// import * as React from 'react';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import MagicText from '../src';
+import MagicText from '../src/MagicText';
 
 const stories = storiesOf('Components', module);
 
-stories.add('MagicText', () => <MagicText />);
+stories.add('MagicText', () => <MagicText content="How" updateContent={() => {}} />);
