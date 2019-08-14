@@ -1,6 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useCallback, useRef, useState, MutableRefObject } from 'react';
 
 import { MagicTextArea, MagicTextInput, StealthButton } from './styles';
+// TODO: Make updateContent optional, and manage state internally if it isn't passed
 export type MagicTextProps = {
   content: string;
   updateContent: (content: string) => void;
