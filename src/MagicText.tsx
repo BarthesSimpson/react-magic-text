@@ -1,19 +1,29 @@
-import React, { ChangeEvent, KeyboardEvent, useCallback, useRef, useState, MutableRefObject } from 'react';
+import React, {
+  ChangeEvent,
+  KeyboardEvent,
+  useCallback,
+  useRef,
+  useState,
+  MutableRefObject,
+  ReactElement,
+} from 'react';
 
 import { MagicTextArea, MagicTextInput, StealthButton } from './styles';
-// TODO: Make updateContent optional, and manage state internally if it isn't passed
 export type MagicTextProps = {
   content: string;
   updateContent: (content: string) => void;
   useInput?: boolean;
+  children?: ReactElement;
 };
 
 // The enter key
 const ENTER = 'Enter';
 
-// TODO: Let caller pass in the target input themselves
 export default function MagicText(props: MagicTextProps) {
-  const { content, updateContent, useInput = false } = props;
+  const { content, updateContent, useInput = false, children = null } = props;
+  const hasCustomElement = !!children && React.Children.count(children);
+  // Verify there is at most one child element (i.e. a custom input)
+  if (hasCustomElement) React.Children.only(children);
   const [isEditable, setIsEditable] = useState(false);
   const toggleIsEditable = useCallback(() => setIsEditable(isEditable => !isEditable), []);
   const textArea = useRef<HTMLTextAreaElement>(null);
@@ -45,12 +55,21 @@ export default function MagicText(props: MagicTextProps) {
     onChange: handleChange,
   };
 
+  // If the user passed a custom element
+  const inputElement = hasCustomElement ? (
+    React.Children.map(children!, (child: ReactElement) =>
+      React.cloneElement(child, { ref: textArea, ...textEditProps }),
+    )[0]
+  ) : useInput ? (
+    // If the user wants a text input
+    <MagicTextInput ref={textInput} {...textEditProps} />
+  ) : (
+    // If the user wants a textarea (default)
+    <MagicTextArea ref={textArea} {...textEditProps} />
+  );
+
   return isEditable ? (
-    useInput ? (
-      <MagicTextInput ref={textInput} {...textEditProps} />
-    ) : (
-      <MagicTextArea ref={textArea} {...textEditProps} />
-    )
+    inputElement
   ) : (
     <StealthButton onClick={makeEditable} ref={button}>
       {content.trim() ? content : 'Click to edit'}

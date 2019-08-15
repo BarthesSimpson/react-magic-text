@@ -1,0 +1,3 @@
+- Let user pass a custom button element
+- Let user customize the placeholder text
+- Add some tests
