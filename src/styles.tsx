@@ -1,16 +1,16 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const WorkPanelHeader = styled.h2`
   text-align: center;
   padding-right: 20%;
-`
-WorkPanelHeader.displayName = "WorkPanelHeader"
+`;
+WorkPanelHeader.displayName = 'WorkPanelHeader';
 
 export const WorkPanelDate = styled.h4`
   text-align: center;
   padding-right: 20%;
-`
-WorkPanelHeader.displayName = "WorkPanelHeader"
+`;
+WorkPanelHeader.displayName = 'WorkPanelHeader';
 
 export const MagicTextArea = styled.textarea`
   width: 80%;
@@ -18,14 +18,14 @@ export const MagicTextArea = styled.textarea`
   font-size: 1.1em;
   height: auto;
   font-weight: 400;
-  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   border-radius: 3px;
   border: none;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   padding: 0.5em;
   transition: height 150ms ease;
-`
-MagicTextArea.displayName = "MagicTextArea"
+`;
+MagicTextArea.displayName = 'MagicTextArea';
 
 export const MagicTextInput = styled.input`
   width: 80%;
@@ -33,14 +33,14 @@ export const MagicTextInput = styled.input`
   font-size: 1.1em;
   height: auto;
   font-weight: 400;
-  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   border-radius: 3px;
   border: none;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   padding: 0.5em;
   transition: height 150ms ease;
-`
-MagicTextInput.displayName = "MagicTextInput"
+`;
+MagicTextInput.displayName = 'MagicTextInput';
 
 export const StealthButton = styled.button`
   display: block;
@@ -50,28 +50,23 @@ export const StealthButton = styled.button`
   font-size: 1.1em;
   width: 80%;
   text-align: left;
-`
-StealthButton.displayName = "StealthButton"
+`;
+StealthButton.displayName = 'StealthButton';
 
 export const SectionHeading = styled.h2`
   text-align: center;
   padding-right: 20%;
-`
-SectionHeading.displayName = "SectionHeading"
+`;
+SectionHeading.displayName = 'SectionHeading';
 
 export const SubHeading = styled.h3`
   font-weight: strong;
-`
-SubHeading.displayName = "SubHeading"
+`;
+SubHeading.displayName = 'SubHeading';
 
 export const SectionBoundary = styled.hr`
   border: 0;
   height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0)
-  );
-`
-SectionBoundary.displayName = "SectionBoundary"
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+`;
+SectionBoundary.displayName = 'SectionBoundary';

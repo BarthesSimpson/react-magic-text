@@ -1,12 +1,12 @@
 {
   "name": "react-magic-text",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Magic Text component for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "export NODE_ENV=production && tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.{js,jsx}?\"",
     "lint": "tslint -p tsconfig.json",
     "postversion": "git push && git push --tags",
     "prepare": "npm run build",
