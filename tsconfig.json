@@ -24,5 +24,6 @@
     "noUnusedLocals": true,
     "declaration": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/__test__", "**/__test__/*"]
 }
