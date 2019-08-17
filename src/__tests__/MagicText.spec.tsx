@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import waitForExpect from 'wait-for-expect';
-// import { render, fireEvent } from '@testing-library/react';
+
 import MagicText from '../MagicText';
 
 function BasicExample(props: {}) {

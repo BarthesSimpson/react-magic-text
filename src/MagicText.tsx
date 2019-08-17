@@ -1,20 +1,20 @@
 import React, {
   ChangeEvent,
   KeyboardEvent,
+  MutableRefObject,
+  ReactElement,
   useCallback,
   useRef,
   useState,
-  MutableRefObject,
-  ReactElement,
 } from 'react';
 
 import { MagicTextArea, MagicTextInput, StealthButton } from './styles';
-export type MagicTextProps = {
+export interface MagicTextProps {
   content: string;
   updateContent: (content: string) => void;
   useInput?: boolean;
   children?: ReactElement;
-};
+}
 
 // The enter key
 const ENTER = 'Enter';
@@ -50,9 +50,9 @@ export default function MagicText(props: MagicTextProps) {
 
   const textEditProps = {
     onBlur: toggleIsEditable,
+    onChange: handleChange,
     onKeyPress: blurOnShiftEnter,
     value: content,
-    onChange: handleChange,
   };
 
   // If the user passed a custom element
